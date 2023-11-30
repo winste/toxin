@@ -1,0 +1,45 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  modules: [
+    '@nuxtjs/svg-sprite'
+  ],
+  css: ['@/assets/scss/index.scss'],
+  app: {
+    head: {
+      title: 'Toxin - Hotels search service',
+      meta: [
+        { charset: 'utf-8' },
+        {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1, maximum-scale=1'
+        }
+      ],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/favicon.ico'
+        }
+      ],
+    }
+  },
+  svgSprite: {
+  },
+  imports: {
+    dirs: ['./stores']
+  },
+  devtools: {
+    enabled: true
+  },
+  vite: {
+    plugins: [
+    ],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "@/assets/scss/global.scss";'
+        }
+      }
+    }
+  },
+})

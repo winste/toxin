@@ -1,0 +1,28 @@
+@import "fonts";
+@import "colors";
+@import "mixins";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+*[contenteditable] {
+  user-select: text;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
