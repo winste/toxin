@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { resolve } from 'path'
 
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/svg-sprite'],
+  modules: [
+    '@nuxtjs/svg-sprite',
+    '@nuxt/ui'
+  ],
   css: ['@/assets/scss/index.scss'],
   app: {
     head: {
@@ -25,6 +29,9 @@ export default defineNuxtConfig({
   svgSprite: {},
   devtools: {
     enabled: true,
+  },
+  alias: {
+    'global': resolve(__dirname, './components/global'),
   },
   vite: {
     plugins: [],

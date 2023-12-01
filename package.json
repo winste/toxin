@@ -25,7 +25,9 @@
   },
   "dependencies": {
     "@nuxt/devtools": "^1.0.4",
+    "@nuxt/ui": "^2.11.0",
     "@nuxtjs/svg-sprite": "^1.0.2",
+    "normalize.css": "^8.0.1",
     "nuxt": "^3.8.2",
     "sass": "^1.69.5",
     "stylelint": "^15.11.0",
