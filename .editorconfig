@@ -1,0 +1,19 @@
+# Файл EditorConfig верхнего уровня
+root = true
+
+[*.js]
+# применять "space"
+indent_style = space
+
+# количество отступов, используемых для каждого уровня отступа
+indent_size = 2
+
+# набор символов
+charset = utf-8
+
+# делает символы новой строки в стиле Unixи и в конце файла должна быть пустая строка
+end_of_line = lf
+insert_final_newline = true
+
+# удаляет любые пробельные символы, предшествующие символам новой строки
+trim_trailing_whitespace = true
