@@ -1,7 +1,9 @@
+@use './global.scss';
+
 html {
   box-sizing: border-box;
   font-size: 16px;
-  font-family: Inter, sans-serif;
+  font-family: Montserrat, sans-serif;
   word-spacing: 1px;
   text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
