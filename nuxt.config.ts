@@ -2,11 +2,11 @@
 import { resolve } from 'path'
 
 export default defineNuxtConfig({
-  modules: [
-    '@nuxtjs/svg-sprite',
-    '@nuxt/ui'
-  ],
+  modules: ['@nuxtjs/svg-sprite'],
   css: ['@/assets/scss/index.scss'],
+  colorMode: {
+    preference: 'light'
+  },
   app: {
     head: {
       title: 'Toxin - Hotels search service',
@@ -31,7 +31,7 @@ export default defineNuxtConfig({
     enabled: true,
   },
   alias: {
-    'global': resolve(__dirname, './components/global'),
+    global: resolve(__dirname, './components/global'),
   },
   vite: {
     plugins: [],
