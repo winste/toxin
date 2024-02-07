@@ -1,0 +1,27 @@
+{
+  "input": [
+    {
+      "type": "email",
+      "label": "text field",
+      "title": "default",
+      "placeholder": "email",
+      "value": "",
+      "isActive": false
+    },
+    {
+      "type": "text",
+      "label": "text field",
+      "title": "Hover / Focus",
+      "placeholder": "text",
+      "value": "This is pretty awesome",
+      "isActive": true
+    }
+  ],
+  "select": {
+    "title": "Dropdown",
+    "fields": {
+      "placeholder": "Сколько гостей",
+      "list": ["Взрослые", "Дети", "Младенцы"]
+    }
+  }
+}
