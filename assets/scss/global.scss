@@ -36,6 +36,13 @@ h3 {
   text-transform: uppercase;
 }
 
+input {
+  &:focus,
+  &:focus-visible {
+    outline: 1px solid $dark50;
+  }
+}
+
 .container {
   max-width: 1440px;
   margin: 0 auto;
