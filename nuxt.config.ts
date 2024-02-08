@@ -2,11 +2,8 @@
 import { resolve } from 'path'
 
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/svg-sprite'],
+  modules: ['@nuxtjs/svg-sprite', '@pinia/nuxt'],
   css: ['@/assets/scss/index.scss'],
-  colorMode: {
-    preference: 'light'
-  },
   app: {
     head: {
       title: 'Toxin - Hotels search service',
