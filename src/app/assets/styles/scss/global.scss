@@ -69,3 +69,23 @@ button {
   max-width: 1340px;
   margin: 0 auto;
 }
+
+.app-input {
+  width: 100%;
+  max-width: 320px;
+  height: 44px;
+  padding: 13px;
+  border: 1px solid $dark25;
+  border-radius: 4px;
+
+  &::placeholder {
+    color: $dark25;
+    font-size: 14px;
+  }
+
+  &:active,
+  &:focus-visible {
+    outline: none;
+    border: 1px solid $dark50;
+  }
+}

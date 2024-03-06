@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     plugins: 'app/plugins',
   },
   modules: ['@nuxtjs/svg-sprite', '@pinia/nuxt', "@nuxt/image"],
+  css: ['@/app/assets/styles/scss/main.scss'],
   app: {
     head: {
       title: 'Toxin - Hotels search service',
