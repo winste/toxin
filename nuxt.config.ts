@@ -1,9 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { resolve } from 'path'
+import { fileURLToPath } from 'url';
 
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/svg-sprite', '@pinia/nuxt'],
-  css: ['@/assets/scss/index.scss'],
+  srcDir: 'src/',
+  dir: {
+    public: 'app/public',
+    layouts: 'app/layouts',
+    assets: 'app/assets',
+    middleware: 'app/middleware',
+    plugins: 'app/plugins',
+  },
+  modules: ['@nuxtjs/svg-sprite', '@pinia/nuxt', "@nuxt/image"],
   app: {
     head: {
       title: 'Toxin - Hotels search service',
@@ -28,7 +35,8 @@ export default defineNuxtConfig({
     enabled: true,
   },
   alias: {
-    global: resolve(__dirname, './components/global'),
+    content: fileURLToPath(new URL('src/shared/content/', import.meta.url)),
+    helpers: fileURLToPath(new URL('src/shared/helpers/', import.meta.url)),
   },
   vite: {
     plugins: [],
@@ -36,8 +44,9 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         scss: {
           additionalData: `
-            @use "@/assets/scss/colors.scss" as *;
-            @use "@/assets/scss/mixins.scss" as *;
+          @use "@/app/assets/google-fonts/css/nuxt-google-fonts.css" as *;
+          @use "@/app/assets/styles/scss/_colors.scss" as *;
+          @use "@/app/assets/styles/scss/_mixins.scss" as *;
           `,
         },
       },

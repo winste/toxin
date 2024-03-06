@@ -16,9 +16,12 @@ module.exports = {
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
-    tsconfigRootDir: __dirname,
-    project: 'tsconfig.json',
+    ecmaVersion: 'latest',
+    sourceType: 'module',
     parser: '@typescript-eslint/parser',
+    tsconfigRootDir: __dirname,
+    project: ['./tsconfig.json'],
+    extraFileExtensions: ['.vue'],
   },
   rules: {
     'linebreak-style': 'off',

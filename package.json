@@ -26,6 +26,7 @@
     "vue-eslint-parser": "^9.3.2"
   },
   "dependencies": {
+    "@nuxt/image": "^1.4.0",
     "@nuxtjs/svg-sprite": "^1.0.2",
     "@pinia/nuxt": "^0.5.1",
     "normalize.css": "^8.0.1",
