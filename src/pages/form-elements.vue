@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { AppInput, AppSelect } from '~/shared/';
+import { AppInput } from '~/shared/';
+import SetGuestsInput from '~/features/set-guests/ui/SetGuestsInput.vue';
 
 const fields = {
   placeholder: 'Сколько гостей',
@@ -11,15 +12,16 @@ const fields = {
   <div>
     <AppInput
       type="email"
-      label="text field"
-      title="default"
       placeholder="email"
       value=""
-      :is-active="false"
     />
-    <AppSelect
-      title="dropdown"
+    <AppInput
+      type="email"
+      placeholder="text"
+      value="This is pretty awesome"
+      :is-active="true"
       :fields="fields"
     />
+    <SetGuestsInput />
   </div>
 </template>
