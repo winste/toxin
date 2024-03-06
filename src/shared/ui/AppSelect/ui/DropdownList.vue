@@ -1,41 +1,46 @@
 <script setup lang="ts">
 import DropdownButton from './DropdownButton.vue';
 
-const countGuests = ref();
+interface IGuestList {
+  name: string,
+  count: number
+}
 
 const props = defineProps({
   isOpen: {
     type: Boolean,
     default: false,
   },
+  list: {
+    type: Array as PropType<IGuestList[]>,
+    default: () => [],
+  }
 });
 </script>
 
 <template>
-  <ClientOnly>
-    <div
-      :class="['droplist-component', { _active: props.isOpen }]"
-    >
-      <div v-for="(item, index) in countGuests" :key="index" class="field">
-        <div>
-          {{ item.name }}
-        </div>
+  <div
+    :class="['droplist-component', { _active: props.isOpen }]"
+  >
+    <div v-for="(item, index) in list" :key="index" class="field">
+      <div>
+        {{ item.name }}
+      </div>
 
-        <div class="buttons">
-          <DropdownButton
-            text="-"
-            :is-disabled="!item.value"
-          />
-          <span class="count">
-            {{ item.value }}
-          </span>
-          <DropdownButton
-            text="+"
-          />
-        </div>
+      <div class="buttons">
+        <DropdownButton
+          text="-"
+          :is-disabled="!item.count"
+        />
+        <span class="count">
+          {{ item.count }}
+        </span>
+        <DropdownButton
+          text="+"
+        />
       </div>
     </div>
-  </ClientOnly>
+  </div>
 </template>
 
 <style scoped lang="scss">

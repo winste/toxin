@@ -4,16 +4,15 @@ import DropdownList from './DropdownList.vue';
 const input = ref<HTMLInputElement | null>(null);
 const dropdown = ref<HTMLElement | null>(null);
 const dropdownState = ref();
-const itemsCount = ref(0);
 
 const props = defineProps({
-  title: {
+  placeholder: {
     type: String,
     default: '',
   },
-  fields: {
-    type: Object,
-    default: () => {},
+  list: {
+    type: Array,
+    default: () => [],
   },
 });
 
@@ -45,11 +44,8 @@ onBeforeUnmount(() => {
       :class="{ _active: dropdownState }"
       @click="dropdownToggle"
     >
-      <div v-if="itemsCount">
-        {{ itemsCount }}
-      </div>
-      <div v-else>
-        {{ props.fields.placeholder }}
+      <div>
+        {{ props.placeholder }}
       </div>
     </div>
 
