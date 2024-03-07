@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { fileURLToPath } from 'url';
+import path from 'path';
 
 export default defineNuxtConfig({
   srcDir: 'src/',
@@ -36,8 +36,7 @@ export default defineNuxtConfig({
     enabled: true,
   },
   alias: {
-    content: fileURLToPath(new URL('src/shared/content/', import.meta.url)),
-    helpers: fileURLToPath(new URL('src/shared/helpers/', import.meta.url)),
+    '~': path.join(__dirname, '/src'),
   },
   vite: {
     plugins: [],
