@@ -1,11 +1,6 @@
 <script setup lang="ts">
 import { AppInput } from '~/shared/';
-import SetGuestsInput from '~/features/set-guests/ui/SetGuestsInput.vue';
-
-const fields = {
-  placeholder: 'Сколько гостей',
-  list: ['Взрослые', 'Дети', 'Младенцы'],
-};
+import SelectGuests from '~/features/select-guests/ui/SelectGuests.vue';
 </script>
 
 <template>
@@ -20,8 +15,7 @@ const fields = {
       placeholder="text"
       value="This is pretty awesome"
       :is-active="true"
-      :fields="fields"
     />
-    <SetGuestsInput />
+    <SelectGuests />
   </div>
 </template>
