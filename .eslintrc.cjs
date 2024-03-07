@@ -26,6 +26,7 @@ module.exports = {
   rules: {
     'linebreak-style': 'off',
     'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off',
   },
   ignorePatterns: ['.eslintrc.cjs'],
 }
