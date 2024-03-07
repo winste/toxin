@@ -26,15 +26,17 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="select-guests-component">
+  <div
+    ref="dropdown"
+    class="select-guests-component"
+  >
     <AppInput
       class="input"
-      readonly
+      :is-readonly="true"
       :value="listData.placeholder"
       @click="dropdownToggle"
     />
     <DropdownList
-      ref="dropdown"
       :is-open="dropdownState"
       :list="listData.list"
     />
@@ -42,9 +44,4 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped lang="scss">
-.select-guests-component {
-  .input {
-    cursor: pointer;
-  }
-}
 </style>
