@@ -1,3 +1,4 @@
 import { AppInput } from './AppInput';
+import { AppIcon } from './AppIcon';
 
-export { AppInput };
+export { AppInput, AppIcon };

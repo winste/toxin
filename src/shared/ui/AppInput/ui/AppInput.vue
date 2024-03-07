@@ -35,6 +35,8 @@ const props = defineProps({
       { ' _readonly': props.isReadonly }
       ]"
     />
+
+    <slot class="icon" />
   </div>
 </template>
 
