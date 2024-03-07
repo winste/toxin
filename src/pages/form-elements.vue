@@ -5,11 +5,7 @@ import SelectGuests from '~/features/select-guests/ui/SelectGuests.vue';
 
 <template>
   <div>
-    <AppInput
-      type="email"
-      placeholder="email"
-      value=""
-    />
+    <AppInput type="email" placeholder="email" value="" />
     <AppInput
       type="email"
       placeholder="text"

@@ -42,8 +42,7 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped lang="scss">
-.select-guests-component{
-
+.select-guests-component {
   .input {
     cursor: pointer;
   }

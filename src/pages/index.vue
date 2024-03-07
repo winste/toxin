@@ -1,11 +1,8 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div>
-    <NuxtLink :to="'/form-elements'">
-      form-elements
-    </NuxtLink>
+    <NuxtLink :to="'/form-elements'"> form-elements </NuxtLink>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface IItem {
-  name: string,
-  count: number
+  name: string;
+  count: number;
 }
 
 const props = defineProps({
@@ -12,25 +12,18 @@ const props = defineProps({
   list: {
     type: Array as PropType<IItem[]>,
     default: () => [],
-  }
+  },
 });
 </script>
 
 <template>
-  <div
-    :class="['droplist-component', { _active: props.isOpen }]"
-  >
-    <div 
-      v-for="(item, index) in list"
-      :key="index"
-      class="field"
-    >
+  <div :class="['droplist-component', { _active: props.isOpen }]">
+    <div v-for="(item, index) in list" :key="index" class="field">
       <span>
         {{ item.name }}
       </span>
 
       <slot />
-
     </div>
   </div>
 </template>

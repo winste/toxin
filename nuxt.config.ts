@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     middleware: 'app/middleware',
     plugins: 'app/plugins',
   },
-  modules: ['@nuxtjs/svg-sprite', '@pinia/nuxt', "@nuxt/image"],
+  modules: ['@nuxtjs/svg-sprite', '@pinia/nuxt', '@nuxt/image'],
   css: ['@/app/assets/styles/scss/main.scss'],
   app: {
     head: {
@@ -52,4 +52,4 @@ export default defineNuxtConfig({
       },
     },
   },
-})
+});

@@ -24,8 +24,8 @@ const props = defineProps({
     :type="props.type"
     :placeholder="props.placeholder"
     :value="props.value"
-    :class="[ 'app-input field', {' _active' : props.isActive} ]"
-  >
+    :class="['app-input field', { ' _active': props.isActive }]"
+  />
 </template>
 
 <style scoped lang="scss">

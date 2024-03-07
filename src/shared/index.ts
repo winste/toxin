@@ -1,4 +1,1 @@
-export {
-  AppInput,
-  AppSelect,
-} from './ui';
+export { AppInput, AppSelect } from './ui';

@@ -29,4 +29,4 @@ module.exports = {
     'import/prefer-default-export': 'off',
   },
   ignorePatterns: ['.eslintrc.cjs'],
-}
+};
