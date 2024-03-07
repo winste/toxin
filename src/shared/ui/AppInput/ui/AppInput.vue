@@ -47,6 +47,11 @@ const props = defineProps({
 
   &._readonly {
     cursor: pointer;
+
+    &:focus-visible {
+      border-radius: 0 4px;
+    }
+    
   }
 }
 </style>
