@@ -1,0 +1,21 @@
+@mixin font-family($font-family, $style: sans-serif) {
+  font-family: '#{$font-family}', Arial, Helvetica, sans-serif;
+}
+
+@mixin desktop {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
