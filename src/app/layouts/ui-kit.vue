@@ -3,7 +3,7 @@
     <header>
       <Icon name="icon:logo-colorless" size="48px"/>
     </header>
-    <main class="container">
+    <main class="main">
       <slot />
     </main>
   </div>
@@ -17,7 +17,8 @@
   grid-template-rows: auto 1fr auto;
   padding: 30px;
 
-  .container {
+  .main {
+    padding: 65px 0;
     width: 100%;
     max-width: 1159px;
     margin: 0 auto;

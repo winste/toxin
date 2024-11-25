@@ -101,7 +101,6 @@ const types = [
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 100px;
-  padding: 65px 0;
 
   .color {
     display: grid;
