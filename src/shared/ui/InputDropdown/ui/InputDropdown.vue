@@ -9,12 +9,16 @@ const dropdown = ref<HTMLElement | null>(null);
 const input = ref<HTMLElement | null>(null);
 const dropdownState = ref<boolean>(false);
 
-const handleClick = (): void => {
+const handleClickInput = (): void => {
   dropdownState.value = !dropdownState.value;
 };
 
-onClickOutside(dropdown, () => {
+const closeDropdown = (): void => {
   dropdownState.value = false;
+};
+
+onClickOutside(dropdown, () => {
+  closeDropdown();
 }, { ignore: [input] });
 
 const activeClass = computed(() => ( { _active: dropdownState.value } ));
@@ -22,7 +26,7 @@ const activeClass = computed(() => ( { _active: dropdownState.value } ));
 
 <template>
   <div class="input-dropdown">
-    <div class="field" @click="handleClick">
+    <div class="field" @click="handleClickInput">
       <input
         ref="input"
         :value="value"
@@ -33,7 +37,7 @@ const activeClass = computed(() => ( { _active: dropdownState.value } ));
       <Icon name="icon:arrow" :class="['icon', activeClass]"/>
     </div>
     <div ref="dropdown" :class="['dropdown', activeClass]">
-      <slot />
+      <slot :close="closeDropdown" />
     </div>
   </div>
 </template>

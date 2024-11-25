@@ -5,15 +5,21 @@ import { useGuestsStore } from '../model/store';
 import { pluralizeGuests } from '../libs/pluralizeGuests';
 
 const guestsStore = useGuestsStore();
-const pluralizeGuestsValue = computed(() => pluralizeGuests(guestsStore.guestsCount, guestsStore.babiesCount as number));
+
+const pluralizeGuestsString = computed<string>(() => pluralizeGuests(guestsStore.guestsCount, <number>guestsStore.babiesCount));
+const guestsValue = computed<string>(() => guestsStore.isNotEmpty ? pluralizeGuestsString.value : 'Сколько гостей');
 </script>
 
 <template>
-  <InputDropdown class="select-guests-component" :value="guestsStore.isNotEmpty ? pluralizeGuestsValue : 'Сколько гостей'">
+  <InputDropdown
+    #default="{ close }"
+    :value="guestsValue"
+    class="select-guests"
+  >
     <div class="guests">
       <DropdownField
-        v-for="(guests, index) in guestsStore.guests"
-        :key="index"
+        v-for="guests in guestsStore.guests"
+        :key="guests.key"
         :name="guests.name"
         :count="guests.count"
         :minus-is-disabled="guestsStore.isLowerLimit(guests.key)"
@@ -33,13 +39,14 @@ const pluralizeGuestsValue = computed(() => pluralizeGuests(guestsStore.guestsCo
         :type="'_text'"
         :text="'Применить'"
         class="btn-apply"
+        @click="close"
       />
     </div>
   </InputDropdown>
 </template>
 
 <style scoped lang="scss">
-.select-guests-component {
+.select-guests {
   .guests {
     display: flex;
     flex-direction: column;
